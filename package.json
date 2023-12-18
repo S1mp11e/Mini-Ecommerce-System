@@ -1,0 +1,21 @@
+{
+  "name": "score-entry-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "author": "Zhif97",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "child_process": "^1.0.2",
+    "echarts": "^5.4.1",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1",
+    "formidable": "^1.2.2",
+    "mysql": "^2.18.1"
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  <!-- <base href="./"> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template" />
+  <meta name="author" content="胡一凡" />
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" />
+
+  <title>commodities Information</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="app header-fixed aside-menu-fixed">
+  <header class="app-header navbar">
+    <a class="navbar-brand" href="#" style="margin: 0 auto">
+      <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>system
+    </a>
+  </header>
+  <div class="app-body">
+    <main class="main">
+      <!-- 头部管理-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">system</li>
+        <li class="breadcrumb-item">commodity Information</li>
+      </ol>
+      <div class="container-fluid">
+        <!--指定插值不闪烁的控件-->
+        <div class="animated fadeIn" id="itemsTemplate">
+          <div class="card">
+            <!--卡片头部-->
+            <div class="card-header">
+              <i class="icon-people" aria-hidden="true"></i>commodity Information
+              <div class="card-header-actions">
+                <a class="card-header-action btn-setting" href="/addcommodity_get">
+                  <i class="icon-plus"> add</i>
+                </a>
+              </div>
+            </div>
+            <div class="card-body collapse show" id="collapseExample">
+              <!-- 用来查询 -->
+              <form action="/find_post" method="post">
+                <div class="form-group" style="margin-left: 0rem">
+                  <button class="btn btn-primary" type="submit">search</button>
+                  <div style="display: inline-block">
+                    <input name="id" value="" type="text" class="form-control" placeholder="Please enter ID to search！" pattern="^[0-9]*$"
+                      required style="margin-left: 10px; width: 250px" />
+                  </div>
+                </div>
+              </form>
+              <table class="table table-responsive-sm table-bordered table-striped">
+                <thead>
+                  <tr align="center">
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>QUANTITY</th>
+                    <th>PRICE</th>
+                    <th>SELLS</th>
+                    <th>TIME</th>
+                    <th>OPTION</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  {{each data}}
+                  <tr>
+                    <td contenteditable="false">{{$value.id}}</td>
+                    <td contenteditable="false">{{$value.name}}</td>
+                    <td contenteditable="false"> {{$value.quantity}}</td>
+                    <td contenteditable="false">{{$value.price}}</td>
+                    <td contenteditable="false">{{$value.sells}}</td>
+                    <td contenteditable="false">{{$value.time}}</td>
+                    <td>
+                      
+                      <a class="btn btn-ghost-primary" href="/updatecommodity_get?id={{$value.id}}">edit</a>
+                      <a class="btn btn-ghost-danger" href="/delonecommodity?id={{$value.id}}">delete</a>
+                    </td>
+
+
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="app-footer">
+    <div>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+      <span>&copy; 2022 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Author by</span>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

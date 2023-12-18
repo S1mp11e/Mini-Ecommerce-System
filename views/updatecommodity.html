@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  <!-- <base href="./"> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template" />
+  <meta name="author" content="胡一凡" />
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" />
+  <title>update</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+  <!-- Main styles for this application-->
+  <link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="app header-fixed aside-menu-fixed">
+  <header class="app-header navbar">
+    <a class="navbar-brand" href="#" style="margin: 0 auto">
+      <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>仓库管理
+    </a>
+  </header>
+  <div class="app-body">
+    <main class="main">
+     
+      
+      <div class="container-fluid">
+        <div class="animated fadeIn" id="itemsTemplate">
+          <div class="card">
+            <!--卡片头部-->
+            <div class="card-header">
+              <i class="icon-people" aria-hidden="true"></i>仓库信息
+              <div class="card-header-actions">
+                <a class="btn btn-ghost-primary" href="/">返回</a>
+              </div>
+            </div>
+            <div class="card-body collapse show" id="collapseExample">
+              <div id="model01">
+                <div class="modal-body">
+                  <form class="needs-validation" action="/updatecommodity_post?id={{data[0].id}}" method="post"
+                    enctype="multipart/form-data">
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">
+                        id:</label>
+                      <div class="col-md-4">
+                        <input name="id" value="{{data[0].id}}" type="text" class="form-control" />
+                      </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">name:</label>
+                      <div class="col-md-4">
+                        <input name="name" value="{{data[0].name}}" type="text" class="form-control"
+                           required />
+                        <div class="invalid-feedback">
+                          输入有问题
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">quantity:</label>
+                      <div class="col-md-4">
+                        <input name="quantity" value="{{data[0].quantity}}" type="text"
+                          class="form-control" pattern="^[0-9]*$" required />
+                        <div class="invalid-feedback">
+                          只能输入数字，且不能为空！
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">time:</label>
+                      <div class="col-md-4">
+                        <input name="time" value="{{data[0].time}}" type="text" class="form-control"
+                           required />
+                        <div class="invalid-feedback">
+                          请输入正确
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">price:</label>
+                      <div class="col-md-4">
+                        <input name="price" value="{{data[0].price}}" type="text" class="form-control"
+                           required />
+                        <div class="invalid-feedback">
+                          请输入正确
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">sells:</label>
+                      <div class="col-md-4">
+                        <input name="sells" value="{{data[0].sells}}" type="text" class="form-control"
+                        required />
+                        <div class="invalid-feedback">
+                          请输入正确
+                        </div>
+                      </div>
+                    </div>
+                   
+
+
+                    <div class="modal-footer" style="justify-content: end">
+                      <button class="btn btn-primary" type="submit" style="margin-left: 170px">
+                        保存
+                      </button>
+                      <button class="btn btn-secondary" type="button" onclick="location.href='/'"
+                        style="margin-left: 20px">
+                        取消
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="app-footer">
+    <div>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+      <span>&copy; 2022 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Author by</span>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+    </div>
+  </footer>
+</body>
+
+</html>

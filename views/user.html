@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template" />
+  <meta name="author" content="胡一凡" />
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" />
+  <title>个人信息</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="app header-fixed aside-menu-fixed">
+  <header class="app-header navbar">
+    <a class="navbar-brand" href="#" style="margin: 0 auto">
+      <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+    </a>
+  </header>
+  <div class="app-body">
+    <main class="main">
+      <!-- 头部管理-->
+     
+      <div class="container-fluid">
+        <div class="animated fadeIn" id="itemsTemplate">
+          <div class="card">
+            <!--卡片头部-->
+            <div class="card-header">
+              <i class="icon-people" aria-hidden="true"></i>个人信息
+              <div class="card-header-actions">
+               
+                <a class="card-header-action btn-setting" href="/commodity_get">
+                  <i class="icon-plus"> commodity manange</i>
+                </a>
+              </div>
+              <div class="card-header-actions">
+                <a class="btn btn-ghost-primary" href="/">返回</a>
+              </div>
+            </div>
+            <div class="card-body collapse show" id="collapseExample">
+              <table class="table table-responsive-sm table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>OLD</th>
+                    <th>E-MAIL</th>
+                    <th>AREA</th>
+                    <th>DEPARTMENT</th>
+                    <th>WOEKSHIFT</th>
+                    <th>ATTENDANCE</th>
+                    <th>OPTION</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  <tr>
+                    <td contenteditable="false">{{data[0].id}}</td>
+                    <td contenteditable="false">{{data[0].name}}</td>
+                    <td contenteditable="false">{{data[0].old}}</td>
+                    <td contenteditable="false">{{data[0].email}}</td>
+                    <td contenteditable="false">{{data[0].area}}</td>
+                    <td contenteditable="false">{{data[0].department}}</td>
+                    <td contenteditable="false">{{data[0].workshift}}</td>
+                    <td contenteditable="false">{{data[0].attendance}}</td>
+                      
+                      <td><a class="btn btn-ghost-primary" href="/update_get?id={{data[0].id}}">修改</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="app-footer">
+    <div>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+      <span>&copy; 2022 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Author by</span>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+    </div>
+  </footer>
+</body>
+
+</html>

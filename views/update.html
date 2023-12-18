@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  <!-- <base href="./"> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template" />
+  <meta name="author" content="胡一凡" />
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" />
+  <title>update</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+  <!-- Main styles for this application-->
+  <link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="app header-fixed aside-menu-fixed">
+  <header class="app-header navbar">
+    <a class="navbar-brand" href="#" style="margin: 0 auto">
+      <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>管理员系统
+    </a>
+  </header>
+  <div class="app-body">
+    <main class="main">
+      <!-- 头部管理-->
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">管理员系统</li>
+          <li class="breadcrumb-item">员工信息</li>
+          <li class="breadcrumb-item">编辑个人信息</li>
+        </ol> 
+      <div class="container-fluid">
+        <div class="animated fadeIn" id="itemsTemplate">
+          <div class="card">
+            <!--卡片头部-->
+            <div class="card-header">
+              <i class="icon-people" aria-hidden="true"></i>个人信息
+              <div class="card-header-actions">
+                <a class="btn btn-ghost-primary" href="/">返回</a>
+              </div>
+            </div>
+            <div class="card-body collapse show" id="collapseExample">
+              <div id="model01">
+                <div class="modal-body">
+                  <form class="needs-validation" action="/update_post?id={{data[0].id}}" method="post"
+                    enctype="multipart/form-data">
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">
+                        id:</label>
+                      <div class="col-md-4">
+                        <input name="id" value="{{data[0].id}}" type="text" class="form-control" />
+                      </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">name:</label>
+                      <div class="col-md-4">
+                        <input name="name" value="{{data[0].name}}" type="text" class="form-control"
+                          pattern="^[\u4e00-\u9fa5·A-Za-z][\u4E00-\u9FA5·A-Za-z0-9-_\s]{1,15}$" required />
+                        <div class="invalid-feedback">
+                          用户名必须2到16位中英文、首位必须是中英文，(字母，数字，下划线，减号)
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">old:</label>
+                      <div class="col-md-4">
+                        <input name="old" value="{{data[0].old}}" type="text"
+                          class="form-control" pattern="^[0-9]*$" required />
+                        <div class="invalid-feedback">
+                          只能输入数字，且不能为空！
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">e-mail:</label>
+                      <div class="col-md-4">
+                        <input name="email" value="{{data[0].email}}" type="text" class="form-control"
+                          pattern="\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}" required />
+                        <div class="invalid-feedback">
+                          请输入正确的邮箱
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">area:</label>
+                      <div class="col-md-4">
+                        <input name="area" value="{{data[0].area}}" type="text" class="form-control"
+                          pattern="^[\u4e00-\u9fa5_a-zA-Z0-9]+$" required />
+                        <div class="invalid-feedback">
+                          请输入正确的地址
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">department:</label>
+                      <div class="col-md-4">
+                        <input name="department" value="{{data[0].department}}" type="text" class="form-control"
+                          pattern="^[\u4e00-\u9fa5_a-zA-Z0-9]+$" required />
+                        <div class="invalid-feedback">
+                          请输入正确的部门
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">workshift:</label>
+                      <div class="col-md-4">
+                        <input name="workshift" value="{{data[0].workshift}}" type="text" class="form-control"
+                          pattern="^[A-Za-z]*$" required />
+                        <div class="invalid-feedback">
+                          请输入正确的工作时间
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label class="col-md-1 col-form-label" for="text-input">attendance:</label>
+                      <div class="col-md-4">
+                        <input name="attendance" value="{{data[0].attendance}}" type="text" class="form-control"
+                          pattern="^[A-Za-z]*$" required />
+                        <div class="invalid-feedback">
+                          请输入正确的到达时间
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="modal-footer" style="justify-content: end">
+                      <button class="btn btn-primary" type="submit" style="margin-left: 170px">
+                        保存
+                      </button>
+                      <button class="btn btn-secondary" type="button" onclick="location.href='/'"
+                        style="margin-left: 20px">
+                        取消
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="app-footer">
+    <div>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+      <span>&copy; 2022 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Author by</span>
+      <a target="_blank" href="https://github.com/FanYihu">胡一凡</a>
+    </div>
+  </footer>
+</body>
+
+</html>
