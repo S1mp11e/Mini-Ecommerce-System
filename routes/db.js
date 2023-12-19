@@ -256,13 +256,13 @@ module.exports = {
     var data_value = Object.values(data); //提取返回对象data的value值
     //截取字符串(不用最后一个字符：，)
     // str = str.slice(0, str.length - 1);
-    // var sql = "insert into employeelogin(id,name,machine_learning,nodejs," +
+    // var sql = "insert into customerlogin(id,name,machine_learning,nodejs," +
     //     "microservice,rstudio,system_safety) values(" + str + ")";
-    // var sql = "insert into employeelogin(" + data_key + ") values(" + str + ")";
-    var sql = "insert into employeelogin (" + data_key + ") values (?,?,?)";
+    // var sql = "insert into customerlogin(" + data_key + ") values(" + str + ")";
+    var sql = "insert into customerlogin (" + data_key + ") values (?,?,?)";
     console.log(sql);
     console.log("添加的id：", data.id);
-    var sql_id = "select * from employeelogin where id=" + data.id;
+    var sql_id = "select * from customerlogin where id=" + data.id;
     connection.query(sql_id, function (err, result, filed) {
       if (err) {
         console.log("存在的错误： ", err.message);
@@ -347,13 +347,13 @@ module.exports = {
     var data_value = Object.values(data); //提取返回对象data的value值
     //截取字符串(不用最后一个字符：，)
     // str = str.slice(0, str.length - 1);
-    // var sql = "insert into employeelogin(id,name,machine_learning,nodejs," +
+    // var sql = "insert into customerlogin(id,name,machine_learning,nodejs," +
     //     "microservice,rstudio,system_safety) values(" + str + ")";
-    // var sql = "insert into employeelogin(" + data_key + ") values(" + str + ")";
-    var sql = "select password from employeelogin where id=" + data.id;
+    // var sql = "insert into customerlogin(" + data_key + ") values(" + str + ")";
+    var sql = "select password from customerlogin where id=" + data.id;
     console.log(sql);
     //console.log("添加的id：", data.id);
-    var sql_id = "select * from employeelogin where id=" + data.id;
+    var sql_id = "select * from customerlogin where id=" + data.id;
     connection.query(sql_id, function (err, result, filed) {
       connection.query(sql, data_value, function (err, result) {
         // 异常处理
